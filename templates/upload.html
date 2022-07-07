@@ -1,0 +1,107 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+
+
+<div class="container" id="myrow">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" id="uploading" ><strong>Jenis Awan</strong></a>
+        </li>
+    </ul>
+    <br><br>
+    <!-- tab panes-->
+    <div class="tab-content">
+        <div class="tab-pane active" id="upload-gambar" role="tabpanel" aria-labelledby="uploading">
+            <div class="row">
+                <div class="col">
+                    <form action="#" method="POST" enctype="multipart/form-data">
+                        <!--input file-->
+                        <p>
+                            Upload File : <input type="file" name="image_name" class="btn" style="background-color: #154360; color: azure;" required>
+                        </p>
+                        <!--Submit-->
+                        <p>
+                            <input type="submit" value="submit" class="btn" style="background-color: #154360; color: azure;">
+                        </p>
+
+                        <p align="center"> <strong>Catatan:</strong> <br>
+                            Upload file dalam ekstensi ".png", ".jpg", ".jpeg"
+                            untuk file dengan ekstensi yang lain akan <strong>ditolak</strong> 
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br><br>
+{% if fileupload %}
+
+<div class="container" id='myrow_result'>
+    <div class="row">
+        <div class="col col-8">
+            <h5 align="center">Hasil Identifikasi</h5>
+            <h6 align="center">{{ dt }}</h5>
+            <table>
+                <tr align="center">
+                    <th>Label</th>
+                    <th>Confidence Score</th>
+                </tr>
+                {% for name,score in data.items() %}
+                    <tr align="center">
+                        <td>{{ name }}</td>
+                        <td>{{ score }}</td>
+                    </tr>    
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col col-4">
+            <img src="/static/upload/{{ image_filename }}" alt="uploaded image" width="200" height= "{{ height }}">
+
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% if extension %}
+    <div class="container" id="myrow_result">
+        <div class="row">
+            <p>Ektensi gambar tidak valid</p>
+            <p>Pastikan ekstensi gambar yang dimasukkan yaitu: ".png", ".jpg", ".jpeg"</p>
+        </div>
+
+    </div>
+
+
+{% endif %}
+
+
+<style>
+    #myrow{
+        background-color: #EBEDEF;
+    }
+    #myrow_result{
+        background-color: #EBEDEF;
+        padding: 5%;
+        align-content: center;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid black;
+    }
+    .sticky{
+        position: fixed;
+        top:0;
+        width: 100%;
+    }
+</style>
+    
+
+{% endblock %}

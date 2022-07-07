@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% if judul %}{{ judul }} - {% endif %}Identifikasi Jenis Awan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md shadow" style="background:  #154360;">
+        <div class="container"><a class="navbar-brand" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo.JPG') }}" width="150px"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link {% if judul=='Beranda' %} active {% endif %}" href="{{ url_for('index') }}">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link {% if judul=='Tentang' %} active {% endif %}" href="{{ url_for('tentang') }}">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link {% if judul=='Petunjuk' %} active {% endif %}" href="{{ url_for('petunjuk') }}">Petunjuk</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container">
+            <div class="row" style="padding-top: 15px;">
+                <div class="col-md-8" style="border-style: none;">
+                	{% block content %}{% endblock %}
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Menu Cepat</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="https://cloudatlas.wmo.int/en/cirrus-ci.html">Awan Cirrus</a></li>
+                                <li class="list-group-item"><a href="https://cloudatlas.wmo.int/en/stratus-st.html">Awan Stratus</a></li>
+                                <li class="list-group-item"><a href="https://cloudatlas.wmo.int/en/cloud-identification-guide.html" class="link-dark">WMO Cloud Atlas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+<!--Footer-->
+<div class="container">
+    <hr>
+    <footer>
+        Copyright @2022<a href="https://github.com/fmahardika">Fauzi Mahardika</a>
+    </footer> 
+</div>
+
+</html>
+
+<style>
+    a:link{
+      color:black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited{
+      color:black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover{
+      color:black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:active{
+      color:black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+  </style>

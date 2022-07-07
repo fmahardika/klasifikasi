@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <br>
+      <h3>Web Identifikasi Awan</h3>
+      <p>Sistem mengidentifikasi jenis awan altostratus, cirrus, cumulus, dan  stratus </p>
+    <br>
+</div>
+<div class="container" align="center">
+    <h5 style="font-family:lucida handwriting"> Petunjuk Penggunaan </h5>
+    <p align="justify">1.	Pengguna dapat memulai pengujian dengan memasukkan file gambar awan yakni dengan menekan tombol “choose file” pada menu upload file. Menu ini yang terdapat pada beranda atau dapat menekan logo web identifikasi awan untuk akses pada menu upload file.</p>
+    <img src="{{ url_for('static', filename='images/petunjuk1.JPG') }}" alt="logo"  width="500px" >
+    <br>
+    <br>
+    <p align="justify">2.	Pengguna harap memastikan ekstensi file gambar atau citra yang akan dimasukkan sesuai dengan ekstensi file (.png, .jpg, dan .jpeg) yang dapat diproses oleh sistem identifikasi awan. Apabila ekstensi file telah sesuai maka pengguna dapat menekan tombol “submit” untuk melihat hasil identifikasi.</p>
+    <img src="{{ url_for('static', filename='images/petunjuk2.JPG') }}" alt="logo"  width="500px">
+    <br>
+    <br>
+    <p align="justify">3.	Pengguna kemudian memasukkan gambar atau file dan menunggu beberapa saat sampai sistem berhasil menampilkan hasil identifikasi awan dan confidence score dari gambar yang telah dimasukkan. Confidence score tertinggi dan ditampilkan teratas menjadi jenis awan yang teridentifikasi oleh sistem.</p>
+    <img src="{{ url_for('static', filename='images/petunjuk3.JPG') }}" alt="logo"  width="500px">
+</div>
+{% endblock %}

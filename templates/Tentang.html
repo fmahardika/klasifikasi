@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <br>
+      <h3>Web Identifikasi Awan</h3>
+      <p>Sistem mengidentifikasi jenis awan altostratus, cirrus, cumulus, dan stratus </p>
+    <br>
+</div>
+<div class="container" align="center">
+    <h5 style="font-family:lucida handwriting"> Tentang Sistem </h5>
+    <img src="{{ url_for('static', filename='images/tentang.JPG') }}" alt="logo"  width="500px" >
+    <h6 style="font-family:lucida handwriting"> Version 1.0.0 </h6>
+    <p align="justify"><strong>     Sistem Identifikasi Awan</strong> adalah sistem berbasis website yang dikembangkan untuk mengidentifikasi jenis awan dengan masukan berupa citra atau gambar awan. Sistem ini dapat mengidentifikasi jenis awan altostratus, cirrus, cumulus, dan stratus dengan keluaran berupa jenis awan dan confidence score.
+    </p>
+    <p align="justify">     Sistem ini dibangun menggunakan micro-Framework Python yaitu Flask. Sistem ini juga memiliki akses menu cepat untuk memudahkan pengguna menemukan referensi terkait jenis awan.</p>
+
+</div>
+{% endblock %}
